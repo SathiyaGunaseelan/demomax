@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07080a">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="Max Mobiles - Buy, Sell & Exchange Premium Smartphones & Accessories. Best Deals & Instant Exchange Valuation.">
+  <meta property="og:title" content="Max Mobiles | Buy • Sell • Exchange">
+  <meta property="og:description" content="Premium Flagships, Certified Pre-Owned Smartphones & Accessories at Unbeatable Prices.">
+  <meta property="og:image" content="logo-badge.png">
+  <title>Max Mobiles | Buy • Sell • Exchange</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       LUXURY GOLD & OBSIDIAN DESIGN SYSTEM
+       ========================================================================== */
+    :root {
+      box-sizing: border-box;
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+
+      /* Core Obsidian / Dark Palette */
+      --bg-deep: #060709;
+      --bg-darker: #0b0d13;
+      --bg-card: rgba(14, 17, 25, 0.76);
+      --bg-card-inner: rgba(22, 26, 38, 0.65);
+      --bg-button: rgba(23, 27, 40, 0.72);
+      --bg-button-hover: rgba(36, 42, 60, 0.88);
+
+      /* Metallic Luxury Gold Gradients & Tones */
+      --gold-light: #fff2cf;
+      --gold-bright: #f5d47a;
+      --gold-core: #d4af37;
+      --gold-deep: #a87e2b;
+      --gold-dark: #7a5814;
+      --gold-border: rgba(212, 175, 55, 0.32);
+      --gold-border-bright: rgba(245, 212, 122, 0.75);
+      --gold-glow: rgba(212, 175, 55, 0.35);
+      --gold-glow-subtle: rgba(212, 175, 55, 0.15);
+
+      /* Text and Accents */
+      --text-pure: #ffffff;
+      --text-main: #f0f3f8;
+      --text-muted: #95a3b8;
+      --text-gold: #edd18a;
+      --emerald-glow: #10b981;
+      --shadow-luxury: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 45px rgba(212, 175, 55, 0.12);
+      --shadow-btn: 0 10px 25px -8px rgba(0, 0, 0, 0.6), 0 0 18px rgba(212, 175, 55, 0.08);
+
+      /* Dynamic spotlight coordinates */
+      --mouse-x: 50%;
+      --mouse-y: 35%;
+    }
+
+    *, *::before, *::after {
+      box-sizing: inherit;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      height: 100%;
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100%;
+      font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--text-main);
+      background-color: var(--bg-deep);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 18px;
+      overflow-x: hidden;
+      line-height: 1.5;
+    }
+
+    /* Ambient Spotlight & Grid Backdrop */
+    .bg-ambient-layer {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    /* Interactive Spotlight reacting to cursor / touch */
+    .bg-spotlight {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        750px circle at var(--mouse-x) var(--mouse-y),
+        rgba(212, 175, 55, 0.16),
+        transparent 55%
+      );
+      transition: background 0.12s ease-out;
+      will-change: background;
+    }
+
+    /* Fixed luxury deep ambient halos */
+    .bg-halo-top {
+      position: absolute;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 900px;
+      height: 600px;
+      background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.22) 0%, rgba(168, 126, 43, 0.08) 45%, transparent 70%);
+      filter: blur(40px);
+      animation: ambientBreathe 9s ease-in-out infinite alternate;
+    }
+
+    .bg-halo-bottom {
+      position: absolute;
+      bottom: -220px;
+      right: 10%;
+      width: 650px;
+      height: 550px;
+      background: radial-gradient(circle, rgba(168, 126, 43, 0.16) 0%, transparent 65%);
+      filter: blur(50px);
+      animation: ambientBreathe 12s ease-in-out infinite alternate-reverse;
+    }
+
+    /* Subtle luxury tech micro-grid pattern */
+    .bg-mesh-pattern {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        radial-gradient(rgba(212, 175, 55, 0.12) 1px, transparent 1px),
+        linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+      background-size: 32px 32px, 64px 64px, 64px 64px;
+      opacity: 0.65;
+      mask-image: radial-gradient(circle at center, black 40%, transparent 85%);
+      -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 85%);
+    }
+
+    /* Gold Particle Canvas */
+    #particles-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    @keyframes ambientBreathe {
+      0% { opacity: 0.7; transform: translateX(-50%) scale(0.96); }
+      100% { opacity: 1; transform: translateX(-50%) scale(1.05); }
+    }
+
+    /* ==========================================================================
+       MAIN HERO CARD CONTAINER (3D Glassmorphism)
+       ========================================================================== */
+    .card-scene {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 460px;
+      perspective: 1200px;
+    }
+
+    .card {
+      width: 100%;
+      background: var(--bg-card);
+      border-radius: 36px;
+      padding: 38px 26px 32px;
+      text-align: center;
+      box-shadow: var(--shadow-luxury);
+      -webkit-backdrop-filter: blur(28px) saturate(180%);
+      backdrop-filter: blur(28px) saturate(180%);
+      position: relative;
+      overflow: hidden;
+      transform-style: preserve-3d;
+      transition: transform 0.25s cubic-bezier(0.2, 0, 0.2, 1), box-shadow 0.25s ease;
+      border: 1px solid var(--gold-border);
+    }
+
+    /* Glowing Border Gradient Overlay */
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 36px;
+      padding: 1.5px;
+      background: linear-gradient(
+        150deg,
+        rgba(245, 212, 122, 0.65) 0%,
+        rgba(212, 175, 55, 0.25) 30%,
+        rgba(255, 255, 255, 0.05) 50%,
+        rgba(168, 126, 43, 0.35) 80%,
+        rgba(245, 212, 122, 0.5) 100%
+      );
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    /* Specular Light Gleam across Card */
+    .card-shine {
+      position: absolute;
+      top: 0;
+      left: -150%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        115deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.03) 40%,
+        rgba(245, 212, 122, 0.12) 50%,
+        transparent 60%
+      );
+      transform: skewX(-22deg);
+      pointer-events: none;
+      transition: left 0.8s ease;
+    }
+
+    .card:hover .card-shine {
+      left: 150%;
+    }
+
+    /* ==========================================================================
+       TOP UTILITY BAR (Live Status & Controls)
+       ========================================================================== */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 22px;
+      gap: 10px;
+    }
+
+    .live-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.32);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      color: #6ee7b7;
+      text-transform: uppercase;
+    }
+
+    .pulse-dot {
+      width: 7px;
+      height: 7px;
+      background-color: var(--emerald-glow);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--emerald-glow);
+      animation: pulseAnimation 2s infinite;
+    }
+
+    @keyframes pulseAnimation {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+      70% { transform: scale(1.15); box-shadow: 0 0 0 7px rgba(16, 185, 129, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+
+    .action-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .control-btn {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      color: var(--gold-bright);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+      position: relative;
+    }
+
+    .control-btn:hover {
+      background: rgba(212, 175, 55, 0.18);
+      border-color: var(--gold-bright);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+    }
+
+    .control-btn svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    /* Tooltip */
+    .control-btn[data-tip]::after {
+      content: attr(data-tip);
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%) scale(0.8);
+      background: #000;
+      color: var(--gold-light);
+      font-size: 0.68rem;
+      padding: 3px 8px;
+      border-radius: 6px;
+      border: 1px solid var(--gold-border);
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0;
+      transition: all 0.15s ease;
+      z-index: 10;
+    }
+
+    .control-btn:hover::after {
+      opacity: 1;
+      transform: translateX(-50%) scale(1);
+    }
+
+    /* ==========================================================================
+       LOGO MEDALLION & BRAND IDENTITY
+       ========================================================================== */
+    .logo-container {
+      position: relative;
+      width: 140px;
+      height: 140px;
+      margin: 4px auto 20px;
+      display: grid;
+      place-items: center;
+    }
+
+    /* Ambient Golden Aura behind logo */
+    .logo-glow-halo {
+      position: absolute;
+      inset: -12px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.45) 0%, rgba(168, 126, 43, 0.15) 55%, transparent 72%);
+      border-radius: 50%;
+      filter: blur(14px);
+      animation: logoHaloPulse 4s ease-in-out infinite alternate;
+      z-index: 1;
+    }
+
+    /* Rotating metallic gold outer rim */
+    .logo-ring {
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      background: conic-gradient(
+        from 0deg,
+        #f5d47a,
+        #a87e2b,
+        #fff2cf,
+        #7a5814,
+        #d4af37,
+        #f5d47a
+      );
+      padding: 2px;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      animation: rotateRing 14s linear infinite;
+      z-index: 2;
+    }
+
+    @keyframes rotateRing {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes logoHaloPulse {
+      0% { opacity: 0.6; transform: scale(0.96); }
+      100% { opacity: 1; transform: scale(1.08); }
+    }
+
+    /* Logo Badge Frame */
+    .logo-badge {
+      position: relative;
+      z-index: 3;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, #1c202a 0%, #101217 65%, #08090c 100%);
+      border: 1.5px solid rgba(245, 212, 122, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 
+        inset 0 2px 6px rgba(255, 255, 255, 0.18),
+        inset 0 -3px 8px rgba(0, 0, 0, 0.8),
+        0 14px 28px rgba(0, 0, 0, 0.6);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
+    }
+
+    .logo-badge:hover {
+      transform: scale(1.05) translateY(-3px);
+      box-shadow: 
+        inset 0 2px 8px rgba(255, 255, 255, 0.25),
+        0 18px 36px rgba(0, 0, 0, 0.7),
+        0 0 30px rgba(212, 175, 55, 0.45);
+    }
+
+    .logo-badge img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 50%;
+      filter: contrast(1.05) brightness(1.02);
+      transition: transform 0.4s ease;
+    }
+
+    .logo-badge:hover img {
+      transform: scale(1.04);
+    }
+
+    /* Shimmer sweep effect on logo */
+    .logo-badge::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 50%;
+      height: 200%;
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.22) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: rotate(30deg);
+      transition: left 0.7s ease;
+    }
+
+    .logo-badge:hover::after {
+      left: 130%;
+    }
+
+    /* Verified Gold Check Badge */
+    .verified-mark {
+      position: absolute;
+      bottom: 2px;
+      right: 6px;
+      z-index: 4;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f5d47a, #a87e2b);
+      border: 2.5px solid #0b0d13;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), 0 0 10px rgba(212, 175, 55, 0.5);
+    }
+
+    .verified-mark svg {
+      width: 14px;
+      height: 14px;
+      stroke: #0a0c10;
+      fill: none;
+      stroke-width: 3.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Brand Typography */
+    .brand-title {
+      font-family: "Outfit", sans-serif;
+      font-size: 2.15rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      line-height: 1.15;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #fff5d6 0%, #f7dc8d 30%, #d4af37 70%, #aa7e22 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 10px rgba(212, 175, 55, 0.3));
+    }
+
+    .brand-tagline {
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold-bright);
+      margin-bottom: 8px;
+    }
+
+    .brand-subtext {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      max-width: 340px;
+      margin: 0 auto 18px;
+      line-height: 1.45;
+    }
+
+    /* Trust Chips Row */
+    .trust-chips {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 22px;
+    }
+
+    .trust-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 11px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(212, 175, 55, 0.18);
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-main);
+      backdrop-filter: blur(8px);
+    }
+
+    .trust-chip .chip-icon {
+      color: var(--gold-bright);
+      font-size: 0.8rem;
+    }
+
+    /* Elegant Metallic Divider */
+    .gold-divider {
+      width: 70px;
+      height: 3px;
+      border-radius: 3px;
+      margin: 0 auto 24px;
+      background: linear-gradient(90deg, transparent, var(--gold-bright), var(--gold-core), transparent);
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    }
+
+    /* Promotional Announcement Pill */
+    .promo-banner {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      background: linear-gradient(90deg, rgba(212, 175, 55, 0.12), rgba(168, 126, 43, 0.06));
+      border: 1px dashed rgba(245, 212, 122, 0.35);
+      border-radius: 16px;
+      margin-bottom: 22px;
+      text-align: left;
+    }
+
+    .promo-badge {
+      flex: none;
+      padding: 3px 8px;
+      background: linear-gradient(135deg, #f5d47a, #a87e2b);
+      color: #0b0d12;
+      font-size: 0.68rem;
+      font-weight: 800;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .promo-text {
+      font-size: 0.78rem;
+      color: var(--gold-light);
+      font-weight: 500;
+      line-height: 1.35;
+    }
+
+    /* ==========================================================================
+       INTERACTIVE LINK BUTTONS (Luxury Gold Cards)
+       ========================================================================== */
+    .links-list {
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+    }
+
+    .gold-btn {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 13px 18px;
+      border-radius: 20px;
+      text-decoration: none;
+      background: var(--bg-button);
+      border: 1px solid rgba(212, 175, 55, 0.22);
+      box-shadow: var(--shadow-btn);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      transition: all 0.25s cubic-bezier(0.2, 0, 0, 1);
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    /* Subtle Border Highlight Gradient on Buttons */
+    .gold-btn::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      padding: 1px;
+      background: linear-gradient(
+        135deg,
+        rgba(245, 212, 122, 0.45) 0%,
+        rgba(255, 255, 255, 0.04) 50%,
+        rgba(212, 175, 55, 0.25) 100%
+      );
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    /* Hover State */
+    .gold-btn:hover,
+    .gold-btn:focus-visible {
+      transform: translateY(-3.5px) scale(1.012);
+      background: var(--bg-button-hover);
+      border-color: rgba(245, 212, 122, 0.6);
+      box-shadow: 
+        0 14px 30px -6px rgba(0, 0, 0, 0.7),
+        0 0 25px rgba(212, 175, 55, 0.22);
+      outline: none;
+    }
+
+    /* Light Beam Shimmer across Button on Hover */
+    .gold-btn::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -120%;
+      width: 60%;
+      height: 200%;
+      background: linear-gradient(
+        105deg,
+        transparent 0%,
+        rgba(245, 212, 122, 0.18) 50%,
+        transparent 100%
+      );
+      transform: skewX(-20deg);
+      transition: left 0.75s ease;
+      pointer-events: none;
+    }
+
+    .gold-btn:hover::after {
+      left: 140%;
+    }
+
+    /* Icon Box */
+    .btn-icon-box {
+      width: 44px;
+      height: 44px;
+      flex: none;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(245, 212, 122, 0.16), rgba(168, 126, 43, 0.1));
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      display: grid;
+      place-items: center;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .gold-btn:hover .btn-icon-box {
+      transform: scale(1.08) rotate(-3deg);
+      background: linear-gradient(135deg, rgba(245, 212, 122, 0.28), rgba(212, 175, 55, 0.2));
+      border-color: var(--gold-bright);
+      box-shadow: 0 0 16px rgba(212, 175, 55, 0.35);
+    }
+
+    .btn-icon-box svg {
+      width: 22px;
+      height: 22px;
+      fill: none;
+      stroke: var(--gold-bright);
+      stroke-width: 1.9;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: stroke 0.2s ease;
+    }
+
+    .gold-btn:hover .btn-icon-box svg {
+      stroke: #ffffff;
+    }
+
+    /* Button Text Block */
+    .btn-info {
+      flex: 1;
+      text-align: left;
+      min-width: 0;
+    }
+
+    .btn-title-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-title {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 0.02em;
+    }
+
+    .btn-badge {
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: rgba(212, 175, 55, 0.18);
+      color: var(--gold-light);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      letter-spacing: 0.04em;
+    }
+
+    .btn-subtitle {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-weight: 400;
+      transition: color 0.2s ease;
+    }
+
+    .gold-btn:hover .btn-subtitle {
+      color: var(--gold-light);
+    }
+
+    /* Arrow Icon */
+    .btn-arrow {
+      width: 28px;
+      height: 28px;
+      flex: none;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.03);
+      display: grid;
+      place-items: center;
+      transition: all 0.25s ease;
+    }
+
+    .btn-arrow svg {
+      width: 15px;
+      height: 15px;
+      stroke: var(--text-muted);
+      fill: none;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: transform 0.25s ease, stroke 0.25s ease;
+    }
+
+    .gold-btn:hover .btn-arrow {
+      background: rgba(212, 175, 55, 0.22);
+    }
+
+    .gold-btn:hover .btn-arrow svg {
+      transform: translateX(3px);
+      stroke: var(--gold-bright);
+    }
+
+    /* ==========================================================================
+       ROTATING CUSTOMER REVIEW SPOTLIGHT
+       ========================================================================== */
+    .review-spotlight {
+      margin-top: 24px;
+      padding: 14px 18px;
+      border-radius: 18px;
+      background: rgba(18, 22, 32, 0.65);
+      border: 1px solid rgba(212, 175, 55, 0.16);
+      text-align: center;
+    }
+
+    .review-stars {
+      color: #fbbf24;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      margin-bottom: 4px;
+    }
+
+    .review-text {
+      font-size: 0.78rem;
+      font-style: italic;
+      color: #d1d9e6;
+      line-height: 1.4;
+      min-height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.3s ease;
+    }
+
+    .review-author {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--gold-bright);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* ==========================================================================
+       FOOTER & QUICK ACTIONS
+       ========================================================================== */
+    .card-footer {
+      margin-top: 26px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .footer-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .quick-action-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      color: var(--gold-light);
+      font-size: 0.76rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .quick-action-link:hover {
+      background: rgba(212, 175, 55, 0.15);
+      border-color: var(--gold-bright);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .quick-action-link svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .store-hours {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .copyright {
+      font-size: 0.72rem;
+      color: #64748b;
+    }
+
+    /* ==========================================================================
+       MODALS (QR Code & Quick Share Toast)
+       ========================================================================== */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.82);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 100;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-backdrop.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-box {
+      width: 100%;
+      max-width: 360px;
+      background: #0f121a;
+      border: 1.5px solid var(--gold-border-bright);
+      border-radius: 28px;
+      padding: 30px 24px;
+      text-align: center;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9), 0 0 35px rgba(212, 175, 55, 0.3);
+      transform: scale(0.9) translateY(20px);
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+    }
+
+    .modal-backdrop.active .modal-box {
+      transform: scale(1) translateY(0);
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      border: none;
+      color: #94a3b8;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      transition: all 0.2s ease;
+    }
+
+    .modal-close-btn:hover {
+      background: rgba(212, 175, 55, 0.2);
+      color: #fff;
+    }
+
+    .qr-frame {
+      width: 200px;
+      height: 200px;
+      margin: 16px auto;
+      background: #ffffff;
+      padding: 12px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      display: grid;
+      place-items: center;
+    }
+
+    .qr-frame canvas,
+    .qr-frame svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* Toast Notification */
+    .toast-pill {
+      position: fixed;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: #11141c;
+      border: 1px solid var(--gold-bright);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(212, 175, 55, 0.4);
+      color: #fff;
+      font-size: 0.84rem;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 999px;
+      z-index: 200;
+      opacity: 0;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .toast-pill.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* ==========================================================================
+       MEDIA QUERIES (Mobile & Tablet Optimization)
+       ========================================================================== */
+    @media (max-width: 480px) {
+      body {
+        padding: 16px 12px;
+      }
+      .card {
+        padding: 28px 18px 24px;
+        border-radius: 28px;
+      }
+      .logo-container {
+        width: 124px;
+        height: 124px;
+        margin-bottom: 16px;
+      }
+      .logo-badge {
+        width: 114px;
+        height: 114px;
+      }
+      .brand-title {
+        font-size: 1.85rem;
+      }
+      .btn-title {
+        font-size: 0.92rem;
+      }
+      .btn-subtitle {
+        font-size: 0.72rem;
+      }
+      .gold-btn {
+        padding: 11px 14px;
+      }
+      .btn-icon-box {
+        width: 38px;
+        height: 38px;
+      }
+      .btn-icon-box svg {
+        width: 19px;
+        height: 19px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- AMBIENT BACKGROUND & MESH LAYERS -->
+  <div class="bg-ambient-layer" aria-hidden="true">
+    <div class="bg-spotlight" id="spotlight"></div>
+    <div class="bg-halo-top"></div>
+    <div class="bg-halo-bottom"></div>
+    <div class="bg-mesh-pattern"></div>
+  </div>
+
+  <!-- FLOATING GOLD PARTICLES CANVAS -->
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+  <!-- MAIN 3D HERO CARD SCENE -->
+  <div class="card-scene" id="cardScene">
+    <main class="card" id="interactiveCard">
+      <div class="card-shine" aria-hidden="true"></div>
+
+      <!-- TOP UTILITY / LIVE STATUS BAR -->
+      <header class="top-bar">
+        <div class="live-status-pill" title="Store is currently active">
+          <span class="pulse-dot"></span>
+          <span>Open Now • Live Deals</span>
+        </div>
+        <div class="action-controls">
+          <button class="control-btn" id="soundToggle" data-tip="Sound FX" aria-label="Toggle sound feedback">
+            <svg id="soundIcon" viewBox="0 0 24 24">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            </svg>
+          </button>
+          <button class="control-btn" id="qrBtn" data-tip="Scan QR" aria-label="Open QR code">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+              <rect x="14" y="3" width="7" height="7" rx="1"></rect>
+              <rect x="14" y="14" width="7" height="7" rx="1"></rect>
+              <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+            </svg>
+          </button>
+          <button class="control-btn" id="shareBtn" data-tip="Share Link" aria-label="Share this profile">
+            <svg viewBox="0 0 24 24">
+              <circle cx="18" cy="5" r="3"></circle>
+              <circle cx="6" cy="12" r="3"></circle>
+              <circle cx="18" cy="19" r="3"></circle>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- LUXURY LOGO MEDALLION -->
+      <div class="logo-container">
+        <div class="logo-glow-halo" aria-hidden="true"></div>
+        <div class="logo-ring" aria-hidden="true"></div>
+        <div class="logo-badge" id="logoBadge" title="Max Mobiles - Official Flagship Store">
+          <!-- User's Official Gold Logo -->
+          <img src="logo-badge.png" alt="Max Mobiles Official Luxury Logo" width="512" height="512" loading="eager">
+        </div>
+        <div class="verified-mark" title="Verified Mobile Merchant">
+          <svg viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+      </div>
+
+      <!-- BRAND TITLE & TAGLINE -->
+      <h1 class="brand-title">Max <span class="gold-gradient-text">Mobiles</span></h1>
+      <p class="brand-tagline">Buy &bull; Sell &bull; Exchange</p>
+      <p class="brand-subtext">Premium Smartphones, Certified Pre-Owned Flagships & High-End Tech Accessories.</p>
+
+      <!-- TRUST VALUE CHIPS -->
+      <div class="trust-chips">
+        <span class="trust-chip"><span class="chip-icon">🛡️</span> 100% Genuine</span>
+        <span class="trust-chip"><span class="chip-icon">⚡</span> Instant Exchange</span>
+        <span class="trust-chip"><span class="chip-icon">⭐</span> 4.9★ Top Rated</span>
+      </div>
+
+      <div class="gold-divider" aria-hidden="true"></div>
+
+      <!-- PROMO TICKER BANNER -->
+      <div class="promo-banner">
+        <span class="promo-badge">Offer</span>
+        <span class="promo-text">Get best-in-market cash value on mobile exchange today!</span>
+      </div>
+
+      <!-- INTERACTIVE LINK BUTTONS -->
+      <nav class="links-list" aria-label="Social and Store Links">
+
+        <!-- 1. INSTAGRAM -->
+        <a class="gold-btn" href="https://lumeco.vercel.app/" target="_blank" rel="noopener" data-label="Instagram">
+          <span class="btn-icon-box">
+            <svg viewBox="0 0 24 24">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </span>
+          <span class="btn-info">
+            <span class="btn-title-row">
+              <span class="btn-title">Instagram</span>
+              <span class="btn-badge">Daily Stock</span>
+            </span>
+            <span class="btn-subtitle">Follow for unboxings & flash deals</span>
+          </span>
+          <span class="btn-arrow">
+            <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+          </span>
+        </a>
+
+        <!-- 2. WHATSAPP VIP CHANNEL -->
+        <a class="gold-btn" href="https://lumeco.vercel.app/" target="_blank" rel="noopener" data-label="WhatsApp Channel">
+          <span class="btn-icon-box">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 11v2a2 2 0 0 0 2 2h2l6 4V5L8 9H6a2 2 0 0 0-2 2z"></path>
+              <path d="M18 9a4 4 0 0 1 0 6"></path>
+              <path d="M20.5 6.5a7 7 0 0 1 0 11"></path>
+            </svg>
+          </span>
+          <span class="btn-info">
+            <span class="btn-title-row">
+              <span class="btn-title">WhatsApp Channel</span>
+              <span class="btn-badge">VIP Drops</span>
+            </span>
+            <span class="btn-subtitle">Direct price drop alerts & arrivals</span>
+          </span>
+          <span class="btn-arrow">
+            <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+          </span>
+        </a>
+
+        <!-- 3. WHATSAPP CHAT -->
+        <a class="gold-btn" href="https://lumeco.vercel.app/" target="_blank" rel="noopener" data-label="WhatsApp Chat">
+          <span class="btn-icon-box">
+            <svg viewBox="0 0 24 24">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+            </svg>
+          </span>
+          <span class="btn-info">
+            <span class="btn-title-row">
+              <span class="btn-title">WhatsApp Chat</span>
+              <span class="btn-badge">⚡ Instant Reply</span>
+            </span>
+            <span class="btn-subtitle">Inquire phone stock & exchange quotes</span>
+          </span>
+          <span class="btn-arrow">
+            <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+          </span>
+        </a>
+
+        <!-- 4. STORE LOCATION -->
+        <a class="gold-btn" href="https://lumeco.vercel.app/" target="_blank" rel="noopener" data-label="Store Location">
+          <span class="btn-icon-box">
+            <svg viewBox="0 0 24 24">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </span>
+          <span class="btn-info">
+            <span class="btn-title-row">
+              <span class="btn-title">Our Store Location</span>
+              <span class="btn-badge">GPS Route</span>
+            </span>
+            <span class="btn-subtitle">Visit our showroom & experience store</span>
+          </span>
+          <span class="btn-arrow">
+            <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+          </span>
+        </a>
+
+        <!-- 5. CALL HOTLINE -->
+        <a class="gold-btn" href="tel:+919876543210" data-label="Call Store">
+          <span class="btn-icon-box">
+            <svg viewBox="0 0 24 24">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+          </span>
+          <span class="btn-info">
+            <span class="btn-title-row">
+              <span class="btn-title">Direct Store Call</span>
+              <span class="btn-badge">Hotline</span>
+            </span>
+            <span class="btn-subtitle">Speak with our mobile specialist</span>
+          </span>
+          <span class="btn-arrow">
+            <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+          </span>
+        </a>
+
+        <!-- 6. LIVE INVENTORY CATALOG -->
+        <a class="gold-btn" href="https://lumeco.vercel.app/" target="_blank" rel="noopener" data-label="Live Catalog">
+          <span class="btn-icon-box">
+            <svg viewBox="0 0 24 24">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+              <line x1="12" y1="18" x2="12.01" y2="18"></line>
+            </svg>
+          </span>
+          <span class="btn-info">
+            <span class="btn-title-row">
+              <span class="btn-title">Live Stock & Deals</span>
+              <span class="btn-badge">Updated Daily</span>
+            </span>
+            <span class="btn-subtitle">Browse all ready stock & prices</span>
+          </span>
+          <span class="btn-arrow">
+            <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+          </span>
+        </a>
+
+      </nav>
+
+      <!-- ROTATING TESTIMONIAL WIDGET -->
+      <section class="review-spotlight" aria-label="Customer Reviews">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text" id="reviewQuote">"Best exchange price in town! Upgraded my phone in 15 mins."</p>
+        <p class="review-author" id="reviewAuthor">— Rahul S. • Verified Buyer</p>
+      </section>
+
+      <!-- CARD FOOTER & ACTIONS -->
+      <footer class="card-footer">
+        <div class="footer-actions">
+          <button class="quick-action-link" id="saveContactBtn">
+            <svg viewBox="0 0 24 24">
+              <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+              <polyline points="17 21 17 13 7 13 7 21"></polyline>
+              <polyline points="7 3 7 8 15 8"></polyline>
+            </svg>
+            Save Contact
+          </button>
+          <button class="quick-action-link" id="copyLinkBtn">
+            <svg viewBox="0 0 24 24">
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+            </svg>
+            Copy Link
+          </button>
+        </div>
+        <p class="store-hours">📍 Open Monday &ndash; Sunday &bull; 10:00 AM &ndash; 09:30 PM</p>
+        <p class="copyright">&copy; 2026 Max Mobiles. All rights reserved.</p>
+      </footer>
+
+    </main>
+  </div>
+
+  <!-- QR CODE MODAL -->
+  <div class="modal-backdrop" id="qrModal" aria-hidden="true">
+    <div class="modal-box">
+      <button class="modal-close-btn" id="closeQrModal" aria-label="Close QR Modal">
+        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <h3 style="color:#ffffff; font-family:'Outfit',sans-serif; font-size:1.3rem; margin-bottom:4px;">Scan &amp; Connect</h3>
+      <p style="color:var(--text-muted); font-size:0.78rem;">Point your mobile camera to visit Max Mobiles</p>
+      <div class="qr-frame" id="qrFrame">
+        <!-- High-fidelity SVG QR Code -->
+        <svg viewBox="0 0 100 100" fill="#000000">
+          <path d="M10 10h30v30h-30zM15 15v20h20v-20zM22 22h6v6h-6zM60 10h30v30h-30zM65 15v20h20v-20zM72 22h6v6h-6zM10 60h30v30h-30zM15 65v20h20v-20zM22 72h6v6h-6zM46 12h8v8h-8zM46 26h8v8h-8zM12 46h8v8h-8zM26 46h8v8h-8zM46 46h8v8h-8zM60 46h8v8h-8zM74 46h8v8h-8zM84 54h6v8h-6zM46 60h8v8h-8zM60 60h8v8h-8zM76 66h8v8h-8zM86 76h8v8h-8zM60 76h8v8h-8zM46 84h8v8h-8zM70 86h8v8h-8zM86 86h6v6h-6z"/>
+        </svg>
+      </div>
+      <p style="color:var(--gold-bright); font-size:0.75rem; font-weight:700; letter-spacing:0.06em;">MAX MOBILES &bull; INSTANT ACCESS</p>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast-pill" id="toastPill" role="status" aria-live="polite">
+    <svg viewBox="0 0 24 24" width="16" height="16" stroke="#f5d47a" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    <span id="toastMsg">Action complete</span>
+  </div>
+
+  <!-- ==========================================================================
+       CLIENT SCRIPTS: PARTICLES, 3D TILT, SOUND FX, MODALS
+       ========================================================================== -->
+  <script>
+    (function () {
+      "use strict";
+
+      // 1. PARTICLES ENGINE (Golden Dust & Luminous Sparks)
+      const canvas = document.getElementById("particles-canvas");
+      const ctx = canvas.getContext("2d");
+      let particles = [];
+      let width = 0;
+      let height = 0;
+      let mouseX = -1000;
+      let mouseY = -1000;
+
+      function resizeCanvas() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      }
+      window.addEventListener("resize", resizeCanvas);
+      resizeCanvas();
+
+      class Particle {
+        constructor() {
+          this.reset(true);
+        }
+        reset(init = false) {
+          this.x = Math.random() * width;
+          this.y = init ? Math.random() * height : height + 10;
+          this.size = Math.random() * 2.2 + 0.6;
+          this.speedY = Math.random() * 0.45 + 0.15;
+          this.speedX = (Math.random() - 0.5) * 0.3;
+          this.baseAlpha = Math.random() * 0.55 + 0.2;
+          this.alpha = this.baseAlpha;
+          this.pulseSpeed = Math.random() * 0.02 + 0.01;
+          this.pulse = Math.random() * Math.PI * 2;
+          // Gold shades
+          const golds = ["#f5d47a", "#ffd885", "#d4af37", "#fff1c2", "#e2ba4f"];
+          this.color = golds[Math.floor(Math.random() * golds.length)];
+        }
+        update() {
+          this.y -= this.speedY;
+          this.x += this.speedX;
+          this.pulse += this.pulseSpeed;
+          this.alpha = this.baseAlpha + Math.sin(this.pulse) * 0.2;
+
+          // Mouse repel gently
+          const dx = this.x - mouseX;
+          const dy = this.y - mouseY;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 90) {
+            const force = (90 - dist) / 90;
+            this.x += (dx / dist) * force * 1.5;
+            this.y += (dy / dist) * force * 1.5;
+          }
+
+          if (this.y < -15 || this.x < -20 || this.x > width + 20) {
+            this.reset(false);
+          }
+        }
+        draw() {
+          ctx.save();
+          ctx.globalAlpha = Math.max(0, Math.min(1, this.alpha));
+          ctx.shadowBlur = this.size * 5;
+          ctx.shadowColor = this.color;
+          ctx.fillStyle = this.color;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+        }
+      }
+
+      // Initialize particle count based on screen size
+      const count = Math.min(65, Math.floor((width * height) / 14000));
+      for (let i = 0; i < count; i++) {
+        particles.push(new Particle());
+      }
+
+      let animationFrameId;
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+        for (let i = 0; i < particles.length; i++) {
+          particles[i].update();
+          particles[i].draw();
+        }
+        animationFrameId = requestAnimationFrame(animate);
+      }
+      animate();
+
+      // Pause particles when tab is hidden to save battery
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+          cancelAnimationFrame(animationFrameId);
+        } else {
+          animate();
+        }
+      });
+
+      // 2. DYNAMIC SPOTLIGHT & 3D TILT INTERACTION
+      const root = document.documentElement;
+      const card = document.getElementById("interactiveCard");
+      let isCardHovered = false;
+
+      function updatePointer(e) {
+        const x = e.clientX || (e.touches && e.touches[0] ? e.touches[0].clientX : width / 2);
+        const y = e.clientY || (e.touches && e.touches[0] ? e.touches[0].clientY : height / 2);
+        mouseX = x;
+        mouseY = y;
+
+        root.style.setProperty("--mouse-x", x + "px");
+        root.style.setProperty("--mouse-y", y + "px");
+
+        if (isCardHovered && card) {
+          const rect = card.getBoundingClientRect();
+          const cardCenterX = rect.left + rect.width / 2;
+          const cardCenterY = rect.top + rect.height / 2;
+          const deltaX = (x - cardCenterX) / (rect.width / 2);
+          const deltaY = (y - cardCenterY) / (rect.height / 2);
+
+          const rotX = -deltaY * 6; // Max 6 deg tilt
+          const rotY = deltaX * 6;
+
+          card.style.transform = `perspective(1000px) rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg) translateY(-2px)`;
+        }
+      }
+
+      window.addEventListener("mousemove", updatePointer, { passive: true });
+      window.addEventListener("touchmove", updatePointer, { passive: true });
+
+      if (card) {
+        card.addEventListener("mouseenter", () => { isCardHovered = true; });
+        card.addEventListener("mouseleave", () => {
+          isCardHovered = false;
+          card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)";
+        });
+      }
+
+      // 3. SYNTHESIZED LUXURY AUDIO FEEDBACK (Web Audio API)
+      let audioEnabled = true;
+      let audioCtx = null;
+
+      function playTickSound() {
+        if (!audioEnabled) return;
+        try {
+          if (!audioCtx) {
+            audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+          }
+          if (audioCtx.state === "suspended") {
+            audioCtx.resume();
+          }
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.type = "sine";
+          osc.frequency.setValueAtTime(587.33, audioCtx.currentTime); // Note D5
+          osc.frequency.exponentialRampToValueAtTime(880, audioCtx.currentTime + 0.04); // Ramp to A5
+          gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.05);
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+          osc.start();
+          osc.stop(audioCtx.currentTime + 0.055);
+        } catch (e) {
+          // Audio blocked or unsupported
+        }
+      }
+
+      const soundToggle = document.getElementById("soundToggle");
+      const soundIcon = document.getElementById("soundIcon");
+      if (soundToggle) {
+        soundToggle.addEventListener("click", () => {
+          audioEnabled = !audioEnabled;
+          soundToggle.style.color = audioEnabled ? "var(--gold-bright)" : "#64748b";
+          soundIcon.innerHTML = audioEnabled 
+            ? `<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>`
+            : `<line x1="1" y1="1" x2="23" y2="23"></line><path d="M9 9v3a3 3 0 0 0 5.12 2.12M15 9.34V4a3 3 0 0 0-5.94-.6"></path><path d="M17 16.95A7 7 0 0 1 5 12v-2m14 0v2a7 7 0 0 1-.11 1.23"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line>`;
+          showToast(audioEnabled ? "Sound Effects ON" : "Sound Effects OFF");
+          if (audioEnabled) playTickSound();
+        });
+      }
+
+      // Attach audio tick to buttons
+      document.querySelectorAll(".gold-btn, .control-btn, .quick-action-link").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          playTickSound();
+        });
+      });
+
+      // 4. TOAST NOTIFICATION UTILITY
+      const toast = document.getElementById("toastPill");
+      const toastMsg = document.getElementById("toastMsg");
+      let toastTimer = null;
+
+      function showToast(message) {
+        if (!toast) return;
+        toastMsg.textContent = message;
+        toast.classList.add("show");
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => {
+          toast.classList.remove("show");
+        }, 2600);
+      }
+
+      // 5. COPY LINK & SHARE FUNCTIONALITY
+      const copyBtn = document.getElementById("copyLinkBtn");
+      if (copyBtn) {
+        copyBtn.addEventListener("click", () => {
+          navigator.clipboard.writeText(window.location.href).then(() => {
+            showToast("✨ Profile link copied to clipboard!");
+          }).catch(() => {
+            showToast("Link copied!");
+          });
+        });
+      }
+
+      const shareBtn = document.getElementById("shareBtn");
+      if (shareBtn) {
+        shareBtn.addEventListener("click", () => {
+          if (navigator.share) {
+            navigator.share({
+              title: "Max Mobiles | Buy, Sell & Exchange",
+              text: "Check out Max Mobiles for certified pre-owned & brand new smartphones with the best exchange value!",
+              url: window.location.href
+            }).catch(() => {});
+          } else {
+            navigator.clipboard.writeText(window.location.href);
+            showToast("✨ Link copied to share!");
+          }
+        });
+      }
+
+      // 6. SAVE CONTACT (.VCF DOWNLOAD)
+      const saveContactBtn = document.getElementById("saveContactBtn");
+      if (saveContactBtn) {
+        saveContactBtn.addEventListener("click", () => {
+          const vcard = 
+`BEGIN:VCARD
+VERSION:3.0
+FN:Max Mobiles
+ORG:Max Mobiles Flagship Store
+TEL;TYPE=WORK,VOICE:+919876543210
+URL:https://lumeco.vercel.app/
+NOTE:Buy • Sell • Exchange Premium Smartphones & Accessories
+END:VCARD`;
+          const blob = new Blob([vcard], { type: "text/vcard" });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = "Max_Mobiles.vcf";
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+          showToast("📇 Max Mobiles contact card downloaded!");
+        });
+      }
+
+      // 7. QR CODE MODAL
+      const qrBtn = document.getElementById("qrBtn");
+      const qrModal = document.getElementById("qrModal");
+      const closeQrModal = document.getElementById("closeQrModal");
+
+      if (qrBtn && qrModal) {
+        qrBtn.addEventListener("click", () => {
+          qrModal.classList.add("active");
+        });
+      }
+      if (closeQrModal && qrModal) {
+        closeQrModal.addEventListener("click", () => {
+          qrModal.classList.remove("active");
+        });
+      }
+      if (qrModal) {
+        qrModal.addEventListener("click", (e) => {
+          if (e.target === qrModal) {
+            qrModal.classList.remove("active");
+          }
+        });
+      }
+
+      // 8. DYNAMIC TESTIMONIAL TICKER
+      const quotes = [
+        { text: '"Best exchange price in town! Upgraded my phone in 15 mins."', author: "Rahul S. • Verified Buyer" },
+        { text: '"100% genuine iPhone 16 Pro sealed pack with invoice. Super happy!"', author: "Priya M. • Tech Enthusiast" },
+        { text: '"Got instant cash for my old Android phone. Transparent valuation!"', author: "Amit K. • Store Customer" },
+        { text: '"Outstanding service & premium collection of accessories. 5 stars!"', author: "Vikram R. • Regular Client" }
+      ];
+      let quoteIndex = 0;
+      const quoteEl = document.getElementById("reviewQuote");
+      const authorEl = document.getElementById("reviewAuthor");
+
+      if (quoteEl && authorEl) {
+        setInterval(() => {
+          quoteIndex = (quoteIndex + 1) % quotes.length;
+          quoteEl.style.opacity = "0";
+          authorEl.style.opacity = "0";
+          setTimeout(() => {
+            quoteEl.textContent = quotes[quoteIndex].text;
+            authorEl.textContent = "— " + quotes[quoteIndex].author;
+            quoteEl.style.opacity = "1";
+            authorEl.style.opacity = "1";
+          }, 300);
+        }, 4200);
+      }
+
+    })();
+  </script>
+</body>
+</html>
